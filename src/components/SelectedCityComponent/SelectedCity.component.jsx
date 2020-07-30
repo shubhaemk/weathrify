@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from 'react';
 
-import { useFetchData } from "../../hooks/fetchDataHook";
-import { weatherFetch } from "../../services/webService";
+import { City } from '../../services/contextService';
+
+import useFetchData from '../../hooks/fetchDataHook';
+import { weatherFetch } from '../../services/webService';
 
 import {
   Container,
@@ -9,19 +11,20 @@ import {
   DetailContainer,
   BackgroundContainer,
   OverviewContainer,
-} from "./SelectedCity.styles";
+} from './SelectedCity.styles';
 
-import BackgroundComponent from "../BackgroundComponent/Background.component";
-import OverviewComponent from "../OverviewComponent/Overview.component";
-import DetailComponent from "../DetailComponent/Detail.component";
+import BackgroundComponent from '../BackgroundComponent/Background.component';
+import OverviewComponent from '../OverviewComponent/Overview.component';
+import DetailComponent from '../DetailComponent/Detail.component';
 
 const SelectedCityComponent = (props) => {
-  const selectedCity = "Pune";
+  const { selectedCity } = useContext(City);
 
-  const [weatherDataLoading, weatherData, weatherError] = useFetchData(
-    weatherFetch,
-    selectedCity
-  );
+  const [
+    weatherDataLoading,
+    weatherData,
+    weatherError,
+  ] = useFetchData(weatherFetch, selectedCity);
 
   if (weatherError) {
     return <Container>Error</Container>;
