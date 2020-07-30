@@ -4,9 +4,13 @@ const getWeatherURL = (city) =>
 const getBackgroundURL = (blur) =>
   `https://picsum.photos/600/400${blur ? `/?blur=1` : ``}`;
 
+const getLocationSuggestion = (location) =>
+  `https://api.teleport.org/api/cities/?search=${location}`;
+
 export default {
   getWeatherURL,
   getBackgroundURL,
+  getLocationSuggestion,
 };
 
-export { getWeatherURL, getBackgroundURL };
+export { getWeatherURL, getBackgroundURL, getLocationSuggestion };
