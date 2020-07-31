@@ -13,7 +13,7 @@ import CardComponent from '../components/CardComponent/Card.component';
 import ExtraCardComponent from '../components/ExtraCardComponent/ExtraCard.component';
 
 const HomePage = () => {
-  const [selectedCity, setSelectedCity] = useState('Pune');
+  const [selectedCity, setSelectedCity] = useState('');
 
   return (
     <City.Provider value={{ selectedCity, setSelectedCity }}>
