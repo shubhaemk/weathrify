@@ -17,6 +17,12 @@ const useFetchData = (service, ...args) => {
   };
 
   useDeepCompareEffect(() => {
+    setLoading(true);
+    setData(null);
+    setError(null);
+  }, [args]);
+
+  useDeepCompareEffect(() => {
     (async () => {
       try {
         const data = await service(...args);

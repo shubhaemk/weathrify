@@ -19,12 +19,20 @@ import DetailComponent from '../DetailComponent/Detail.component';
 
 const SelectedCityComponent = (props) => {
   const { selectedCity } = useContext(City);
+  const splitSelectedCity = selectedCity.split(',')[0];
 
   const [
     weatherDataLoading,
     weatherData,
     weatherError,
-  ] = useFetchData(weatherFetch, selectedCity);
+  ] = useFetchData(weatherFetch, splitSelectedCity);
+
+  /* console.log({
+    splitSelectedCity,
+    weatherDataLoading,
+    weatherData,
+    weatherError,
+  }); */
 
   if (weatherError) {
     return <Container>Error</Container>;
