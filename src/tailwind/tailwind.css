@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+
+.card {
+  @apply w-full h-full max-w-almostFull max-h-almostFull bg-white bg-opacity-50 rounded-xl backdrop-blur shadow-xl;
+}
+
+@media (min-width: 640px) {
+  .sm\:card {
+    @apply max-w-almost;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:card {
+    @apply max-w-3/4 max-h-3/4;
+  }
+}
+
+@media (min-width: 1540px) {
+  .xl\:card {
+    @apply max-w-1/2 max-h-1/2;
+  }
+}
+
+@tailwind utilities;
+@tailwind screens;
