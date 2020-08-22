@@ -5,7 +5,7 @@
   @apply w-full h-full max-w-almostFull max-h-almostFull bg-white bg-opacity-50 rounded-xl backdrop-blur shadow-xl;
 }
 
-@media (min-width: 610px) {
+@media (min-width: 640px) {
   .sm\:card {
     @apply max-w-almost;
   }
